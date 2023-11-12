@@ -1,11 +1,13 @@
 public class Property {
-    private String value;
-    private String owner;
+    protected int value;
+    protected String owner;
+    protected double taxPercentage;
 
-    public String getValue(){
+    public int getValue(){
         return value;
     }
-    public String getOwner(){
-        return owner;
+    public String getOwner(){return owner;}
+    public double getTaxPercentage(){
+        return taxPercentage;
     }
 }
