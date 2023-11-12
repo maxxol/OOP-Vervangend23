@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public class ObjectCreator {
 
     public static void createObjects(){ //creates all the objects so main stays clean
@@ -21,7 +20,14 @@ public class ObjectCreator {
               house1, house2, house3, house4
         };
 
+        String taxCountsBooleanMessage;
+        double taxesOwed=0;
         for (Property property:listOfProperties) {
+            if (property.getOwner()=="frank inc"){
+            taxesOwed+=property.getValue()*property.getTaxPercentage();
+            taxCountsBooleanMessage = " added to total tax";
+            }
+            else {taxCountsBooleanMessage=" NOT added to total tax";}
             System.out.println(
                     property.getOwner()
                     +" owns a "+
@@ -30,9 +36,12 @@ public class ObjectCreator {
                     property.getValue()
                     +" with a tax percentage of "+
                     String.format("%.2f",property.getTaxPercentage()*100)
-                    +"%"
+                    +"%. tax = $"+
+                    String.format("%.2f",property.getValue()*property.getTaxPercentage())
+                    +taxCountsBooleanMessage
             );
         }
+        System.out.println("total tax: $"+String.format("%.2f",taxesOwed));
 
     }
 }
