@@ -1,8 +1,8 @@
 public class Property {
-    private String value;
-    private String owner;
+    protected int value;
+    protected String owner;
 
-    public String getValue(){
+    public int getValue(){
         return value;
     }
     public String getOwner(){
