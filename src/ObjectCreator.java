@@ -5,10 +5,10 @@ public class ObjectCreator {
 
 
         //boats
-        Boat boot1 = new Boat(10,"frank inc"); //all of these are placeholder objects currently
-        Boat boot2 = new Boat(20,"frank inc");
-        Boat boot3 = new Boat(30,"frank inc");
-        Boat boot4 = new Boat(40,"vexigo inc");
+        Boat boat1 = new Boat(10,"frank inc"); //all of these are placeholder objects currently
+        Boat boat2 = new Boat(20,"frank inc");
+        Boat boat3 = new Boat(30,"frank inc");
+        Boat boat4 = new Boat(40,"vexigo inc");
 
         //houses
         House house1 = new House(100,"frank inc");
@@ -17,7 +17,7 @@ public class ObjectCreator {
         House house4 = new House(400,"Bernard jr");
 
         Property[] listOfProperties = {
-              boot1, boot2, boot3, boot4,
+              boat1, boat2, boat3, boat4,
               house1, house2, house3, house4
         };
 
@@ -33,5 +33,6 @@ public class ObjectCreator {
                     +"%"
             );
         }
+
     }
 }
