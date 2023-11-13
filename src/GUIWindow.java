@@ -18,4 +18,6 @@ public class GUIWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// stop running when window is closed
         setSize(400, 300);// window dimensions
         setVisible(true);// make window visible to user
+
+        textArea.setText("Total Tax: ");
     }}
