@@ -21,7 +21,7 @@ public class ObjectCreator {
                 house1, house2, house3, house4
         };
     }
-    public static Property[] ReturnList(){
+    public static Property[] returnList(){
         return listOfProperties;
     }
 }

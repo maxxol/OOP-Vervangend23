@@ -13,9 +13,9 @@ public class GUIWindow extends JFrame {
         textArea = new JTextArea();// Create a JTextArea to display text
         panel.add(textArea);
 
-        add(panel, BorderLayout.CENTER);// Add the panel to the frame
+        add(panel, BorderLayout.WEST);// Add the panel to the frame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// stop running when window is closed
-        setSize(560, 200);// window dimensions
+        setSize(600, 400);// window dimensions
         setVisible(true);// make window visible to user
 
         textArea.setText(TaxCalculator.CalculateTaxes()); //add text to window

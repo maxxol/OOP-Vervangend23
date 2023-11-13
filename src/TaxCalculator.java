@@ -3,13 +3,14 @@ import java.util.Objects;
 public class TaxCalculator {
     public static String CalculateTaxes(){
         String taxCountsBooleanMessage; //initiating some variables for the loop
-        double taxesOwed=0;
+        double totalTaxesOwed=0;
         String taxMessageFull = "";
-        Property[] listOfProperties = ObjectCreator.ReturnList();
+        Property[] listOfProperties = ObjectCreator.returnList();
 
-            for(Property property:listOfProperties) { //goes through every object in the list. "Property" because all object inherit from it and can thus be called by it
+        for(Property property:listOfProperties) { //goes through every object in the list. "Property" because all object inherit from it and can thus be called by it
+
             if (Objects.equals(property.getOwner(), "frank inc")){ //using .equals instead of == because it's null safe(I totally thought of that myself and not because intellij put a yellow line of depression under it)
-                taxesOwed+=property.getValue()*property.getTaxPercentage();
+                totalTaxesOwed+=property.getValue()*property.getTaxPercentage();
                 taxCountsBooleanMessage = " added to total tax"; //conditional message at the end of line
             }
             else {taxCountsBooleanMessage=" NOT added to total tax";} //if owner is not targeted owner
@@ -27,6 +28,6 @@ public class TaxCalculator {
                             +taxCountsBooleanMessage //add conditional message
                             +"\n");
         }
-        taxMessageFull+=("-----------\ntotal: $"+String.format("%.2f",taxesOwed));
+        taxMessageFull+=("-----------\ntotal: $"+String.format("%.2f",totalTaxesOwed));
         return taxMessageFull;
 }}
