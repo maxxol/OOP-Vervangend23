@@ -5,6 +5,7 @@ public class TaxCalculator {
         String taxCountsBooleanMessage; //initiating some variables for the loop
         double totalTaxesOwed=0;
         String taxMessageFull = "";
+        String previousObjectType = "";
         Property[] listOfProperties = ObjectCreator.returnList();
 
         for(Property property:listOfProperties) { //goes through every object in the list. "Property" because all object inherit from it and can thus be called by it
@@ -14,6 +15,11 @@ public class TaxCalculator {
                 taxCountsBooleanMessage = " added to total tax"; //conditional message at the end of line
             }
             else {taxCountsBooleanMessage=" NOT added to total tax";} //if owner is not targeted owner
+
+            if(Objects.equals(property.getObjectType(),previousObjectType)){
+            }
+            else{taxMessageFull+="\n";}
+            previousObjectType = property.getObjectType();
 
             taxMessageFull+=(
                     property.getOwner() //print the owner
