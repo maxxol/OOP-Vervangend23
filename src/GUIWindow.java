@@ -15,8 +15,8 @@ public class GUIWindow extends JFrame {
 
         add(panel, BorderLayout.WEST);// Add the panel to the frame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// stop running when window is closed
-        setSize(600, 400);// window dimensions
+        setSize(600, TaxCalculator.windowHeight());// window dimensions
         setVisible(true);// make window visible to user
 
-        textArea.setText(TaxCalculator.CalculateTaxes()); //add text to window
+        textArea.setText(TaxCalculator.calculateTaxes()); //add text to window
     }}

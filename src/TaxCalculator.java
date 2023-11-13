@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class TaxCalculator {
-    public static String CalculateTaxes(){
+    public static String calculateTaxes(){
         String taxCountsBooleanMessage; //initiating some variables for the loop
         double totalTaxesOwed=0;
         String taxMessageFull = "";
@@ -36,4 +36,9 @@ public class TaxCalculator {
         }
         taxMessageFull+=("-----------\ntotal: $"+String.format("%.2f",totalTaxesOwed));
         return taxMessageFull;
-}}
+    }
+    public static int windowHeight(){
+        int lineBreakCount = calculateTaxes().split("\n").length;
+        return lineBreakCount*20;
+    }
+}
