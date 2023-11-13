@@ -1,10 +1,11 @@
 public class Property {
     //initialising the default variables of properties
-    protected String objectType;
-    protected int value; // integer that represents the value of the property
-    protected String owner; // string that represents the owner of the property
-    protected double taxPercentage; // double that represents the tax rate devided by 100 for ease of multiplication
+    private String objectType;
+    private int value; // integer that represents the value of the property
+    private String owner; // string that represents the owner of the property
+    private double taxPercentage; // double that represents the tax rate devided by 100 for ease of multiplication
 
+    //getters
     public int getValue(){
         return value;
     }
@@ -13,4 +14,10 @@ public class Property {
         return taxPercentage;
     }
     public String getObjectType(){return objectType;}
+
+    //setters
+    public void setValue(int value){this.value=value;}
+    public void setOwner(String owner){this.owner=owner;}
+    public void setTaxPercentage(double taxPercentage ){this.taxPercentage=taxPercentage;}
+    public void setObjectType(String objectType){this.objectType=objectType;}
 }
