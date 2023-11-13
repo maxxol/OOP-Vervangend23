@@ -6,7 +6,6 @@ import java.awt.BorderLayout;
 public class GUIWindow extends JFrame {
 
     private JTextArea textArea;
-
     public GUIWindow() {
         super("Tax Evaluation"); // Set the title of the window
         JPanel panel = new JPanel(); // Create a panel to hold components
@@ -16,8 +15,8 @@ public class GUIWindow extends JFrame {
 
         add(panel, BorderLayout.CENTER);// Add the panel to the frame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// stop running when window is closed
-        setSize(400, 300);// window dimensions
+        setSize(560, 200);// window dimensions
         setVisible(true);// make window visible to user
 
-        textArea.setText("Total Tax: ");
+        textArea.setText(TaxCalculator.CalculateTaxes()); //add text to window
     }}
