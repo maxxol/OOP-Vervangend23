@@ -1,11 +1,17 @@
+package nhlstenden.oopsubstitute23.objects;
+
+import nhlstenden.oopsubstitute23.objects.propertyclasses.Property;
+import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.Boat;
+import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.House;
+
 public class ObjectCreator {
 
     private static Property[] listOfProperties;
-    public static void createObjects(){ //creates all the objects so main stays clean
+    public static void createObjects(){ //creates all the nhlstenden.oopsubstitute23.objects so nhlstenden.oopsubstitute23.main stays clean
 
 
         //boats
-        Boat boat1 = new Boat(10,"frank inc"); //all of these are placeholder objects currently
+        Boat boat1 = new Boat(10,"frank inc"); //all of these are placeholder nhlstenden.oopsubstitute23.objects currently
         Boat boat2 = new Boat(20,"frank inc");
         Boat boat3 = new Boat(30,"frank inc");
         Boat boat4 = new Boat(40,"vexigo inc");
