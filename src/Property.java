@@ -5,6 +5,13 @@ public class Property {
     private String owner; // string that represents the owner of the property
     private double taxPercentage; // double that represents the tax rate devided by 100 for ease of multiplication
 
+    public Property(String objectType, int value, String owner, double taxPercentage) {
+        this.objectType = objectType;
+        this.value = value;
+        this.owner = owner;
+        this.taxPercentage = taxPercentage;
+    }
+
     //getters
     public int getValue(){
         return value;
