@@ -1,3 +1,10 @@
+package nhlstenden.oopsubstitute23.arithmatic;
+
+import nhlstenden.oopsubstitute23.objects.propertyclasses.Property;
+import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.Boat;
+import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.House;
+import nhlstenden.oopsubstitute23.objects.ObjectCreator;
+
 import java.util.Objects;
 
 public class TaxCalculator {
@@ -8,7 +15,7 @@ public class TaxCalculator {
         String previousObjectType = "";
         Property[] listOfProperties = ObjectCreator.returnList();
 
-        for(Property property:listOfProperties) { //goes through every object in the list. "Property" because all object inherit from it and can thus be called by it
+        for(Property property:listOfProperties) { //goes through every object in the list. "Property.Property" because all object inherit from it and can thus be called by it
 
             if (Objects.equals(property.getOwner(), "frank inc")){ //using .equals instead of == because it's null safe(I totally thought of that myself and not because intellij put a yellow line of depression under it)
                 totalTaxesOwed+=property.getValue()*property.getTaxPercentage();

@@ -1,3 +1,5 @@
+package nhlstenden.oopsubstitute23.objects.propertyclasses;
+
 public class Property {
     //initialising the default variables of properties
     private String objectType;
@@ -14,13 +16,13 @@ public class Property {
 
     //getters
     public int getValue(){
-        return value;
+        return this.value;
     }
-    public String getOwner(){return owner;}
+    public String getOwner(){return this.owner;}
     public double getTaxPercentage(){
-        return taxPercentage;
+        return this.taxPercentage;
     }
-    public String getObjectType(){return objectType;}
+    public String getObjectType(){return this.objectType;}
 
     //setters
     public void setValue(int value){this.value=value;}
