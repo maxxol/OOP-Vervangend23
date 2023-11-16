@@ -1,7 +1,6 @@
 package nhlstenden.oopsubstitute23.ui;
 
 import nhlstenden.oopsubstitute23.arithmatic.TaxCalculator;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;

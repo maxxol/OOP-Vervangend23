@@ -1,10 +1,7 @@
 package nhlstenden.oopsubstitute23.arithmatic;
 
 import nhlstenden.oopsubstitute23.objects.propertyclasses.Property;
-import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.Boat;
-import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.House;
 import nhlstenden.oopsubstitute23.objects.ObjectCreator;
-
 import java.util.Objects;
 
 public class TaxCalculator {
