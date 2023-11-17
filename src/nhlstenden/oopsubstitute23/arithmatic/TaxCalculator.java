@@ -4,7 +4,7 @@ import nhlstenden.oopsubstitute23.objects.propertyclasses.Property;
 import nhlstenden.oopsubstitute23.objects.ObjectCreator;
 import java.util.Objects;
 
-public class TaxCalculator {
+public class TaxCalculator implements taxCalculatorInterface{
     public TaxCalculator() {
     }
     public String calculateTaxes(){
