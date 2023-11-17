@@ -1,23 +1,23 @@
 package nhlstenden.oopsubstitute23.tests;
 import nhlstenden.oopsubstitute23.arithmatic.TaxCalculator;
+import nhlstenden.oopsubstitute23.objects.ObjectCreator;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TaxCalculatorTest {
-    TaxCalculator taxCalculator = new TaxCalculator();
+
     @Test
-    public void testCalculator() {
+    public void testCalculator() { //test the taxCalculator.calculateTaxes method
         // Given
-        int givenValue = 123;
-        String givenOwner = "Arnold Schwarzenegger";
 
         // When
-        String taxLineOne = taxCalculator.calculateTaxes().split("\n")[0];
+        TaxCalculator taxCalculator = new TaxCalculator(); //make instance of TaxCalculator
+        String taxLineOne = taxCalculator.calculateTaxes().split("\n")[1]; //make the output string, split it by newlines, then take the first line of text.
 
         // Then
-        assertEquals(
-                "frank inc owns a Boat, valued at $10 with a tax percentage of 1,52%. tax = $0,15 added to total tax",
-                taxLineOne
+        assertEquals( //are these 2 the same
+                "frank inc owns a Boat, valued at $10 with a tax percentage of 1,52%. tax = $0,15 added to total tax", //currently the expected first string
+                taxLineOne //generated String
         );
     }
 }
