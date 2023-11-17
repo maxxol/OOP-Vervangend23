@@ -1,6 +1,5 @@
 package nhlstenden.oopsubstitute23.tests;
 import nhlstenden.oopsubstitute23.arithmatic.TaxCalculator;
-import nhlstenden.oopsubstitute23.objects.ObjectCreator;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
