@@ -1,19 +1,21 @@
 package nhlstenden.oopsubstitute23.arithmatic;
 
 import nhlstenden.oopsubstitute23.objects.propertyclasses.Property;
-import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.Boat;
-import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.House;
 import nhlstenden.oopsubstitute23.objects.ObjectCreator;
-
 import java.util.Objects;
 
 public class TaxCalculator {
-    public static String calculateTaxes(){
+    public TaxCalculator() {
+    }
+    public String calculateTaxes(){
         String taxCountsBooleanMessage; //initiating some variables for the loop
         double totalTaxesOwed=0;
         String taxMessageFull = "";
         String previousObjectType = "";
-        Property[] listOfProperties = ObjectCreator.returnList();
+
+        ObjectCreator objectCreator = new ObjectCreator();
+        objectCreator.createObjects();
+        Property[] listOfProperties = objectCreator.returnList();
 
         for(Property property:listOfProperties) { //goes through every object in the list. "Property.Property" because all object inherit from it and can thus be called by it
 
@@ -44,7 +46,7 @@ public class TaxCalculator {
         taxMessageFull+=("-----------\ntotal: $"+String.format("%.2f",totalTaxesOwed));
         return taxMessageFull;
     }
-    public static int windowHeight(){
+    public int windowHeight(){
         int lineBreakCount = calculateTaxes().split("\n").length;
         return lineBreakCount*20;
     }
