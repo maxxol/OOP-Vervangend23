@@ -5,17 +5,18 @@ import nhlstenden.oopsubstitute23.objects.ObjectCreator;
 import java.util.Objects;
 
 public class TaxCalculator implements taxCalculatorInterface{
-    public TaxCalculator() {
+    public TaxCalculator() { //constructor
     }
-    public String calculateTaxes(){
-        String taxCountsBooleanMessage; //initiating some variables for the loop
-        double totalTaxesOwed=0;
-        String taxMessageFull = "";
-        String previousObjectType = "";
+    public String calculateTaxes(){ //this method creates and returns a string that contains all info about all properties and thei taxes
+        //initiating some variables for the loop
+        String taxCountsBooleanMessage; //string that says whether tax is added to total or not
+        double totalTaxesOwed=0; //initiating final tax count at 0
+        String taxMessageFull = ""; //initiating eventual string with results as empty
+        String previousObjectType = ""; //checks the subclass of the previous property, if they differ whitespace is added to differentiate them
 
-        ObjectCreator objectCreator = new ObjectCreator(); //creating instance of ObjectCreator in order to call it's list of Properties
-        objectCreator.createObjects();
-        Property[] listOfProperties = objectCreator.returnList();
+        ObjectCreator objectCreator = new ObjectCreator(); //creating instance of ObjectCreator in order to call its list of Properties
+        objectCreator.createObjects();//creating the list
+        Property[] listOfProperties = objectCreator.returnArray();//requesting the list
 
         for(Property property:listOfProperties) { //goes through every object in the list. "Property.Property" because all object inherit from it and can thus be called by it
 
@@ -25,12 +26,12 @@ public class TaxCalculator implements taxCalculatorInterface{
             }
             else {taxCountsBooleanMessage=" NOT added to total tax";} //if owner is not targeted owner
 
-            if(!(Objects.equals(property.getObjectType(),previousObjectType))){
-                taxMessageFull+="\n";
+            if(!(Objects.equals(property.getObjectType(),previousObjectType))){//if property subclass is different from the previous one
+                taxMessageFull+="\n"; //add a whitespace line (skip a line of text)
             }
-            previousObjectType = property.getObjectType();
+            previousObjectType = property.getObjectType(); //reset the previous type to the current type
 
-            taxMessageFull+=(
+            taxMessageFull+=( //iteration of creating the eventual full message
                     property.getOwner() //print the owner
                             +" owns a "+
                             property.getObjectType() //print what type the object is
@@ -42,12 +43,12 @@ public class TaxCalculator implements taxCalculatorInterface{
                             String.format("%.2f",property.getValue()*property.getTaxPercentage())//print owed taxes over the object, rounded to 2 decimals
                             +taxCountsBooleanMessage //add conditional message
                             +"\n");
-        }
-        taxMessageFull+=("-----------\ntotal: $"+String.format("%.2f",totalTaxesOwed));
-        return taxMessageFull;
+        }//looping through all properties is done
+        taxMessageFull+=("-----------\ntotal: $"+String.format("%.2f",totalTaxesOwed));//round total taxes owed to 2 decimals
+        return taxMessageFull; //return the results
     }
-    public int windowHeight(){
-        int lineBreakCount = calculateTaxes().split("\n").length;
-        return lineBreakCount*20;
+    public int windowHeight(){ //dynamically changes the height of the window that shows the results to fit the message
+        int lineBreakCount = calculateTaxes().split("\n").length;//amount of lines in the message
+        return lineBreakCount*20;//20 pixels for every line
     }
 }

@@ -3,7 +3,7 @@ import nhlstenden.oopsubstitute23.objects.propertyclasses.propertysubclasses.Boa
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class BoatTest {
+public class BoatTest { //this is a test for the Boat object
     @Test
     public void testBoatConstructor() {
         // Given
