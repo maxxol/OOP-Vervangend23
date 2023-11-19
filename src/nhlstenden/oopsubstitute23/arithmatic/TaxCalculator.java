@@ -13,7 +13,7 @@ public class TaxCalculator implements taxCalculatorInterface{
         String taxMessageFull = "";
         String previousObjectType = "";
 
-        ObjectCreator objectCreator = new ObjectCreator();
+        ObjectCreator objectCreator = new ObjectCreator(); //creating instance of ObjectCreator in order to call it's list of Properties
         objectCreator.createObjects();
         Property[] listOfProperties = objectCreator.returnList();
 
@@ -25,9 +25,9 @@ public class TaxCalculator implements taxCalculatorInterface{
             }
             else {taxCountsBooleanMessage=" NOT added to total tax";} //if owner is not targeted owner
 
-            if(Objects.equals(property.getObjectType(),previousObjectType)){
+            if(!(Objects.equals(property.getObjectType(),previousObjectType))){
+                taxMessageFull+="\n";
             }
-            else{taxMessageFull+="\n";}
             previousObjectType = property.getObjectType();
 
             taxMessageFull+=(
